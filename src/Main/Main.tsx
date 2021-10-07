@@ -46,6 +46,7 @@ export const Main = () => {
     const dispatch = useDispatch();
     const { jock } = useSelector((state: RootState) => state.jock);
     // const [item, setItem] = useState([])
+    const { jockes } = useSelector((state: RootState) => state.cartJocks);
 
 
     let click: React.MutableRefObject<boolean | undefined> = useRef();
@@ -62,11 +63,11 @@ export const Main = () => {
     }
     let clickToCart: React.MutableRefObject<boolean | undefined> = useRef();
     const clickHandlerCart = (jock: JoksTypes) => {
-        if (!clickToCart.current) {
+        if (!clickToCart.current || !jockes.includes(jock)) {
             dispatch(addJokeToCart(jock))
             clickToCart.current = true
         }
-        else if (clickToCart.current) {
+        else if (clickToCart.current || jockes.includes(jock)) {
             dispatch(deleteItemAction(jock.id))
             clickToCart.current = false
         }
@@ -75,10 +76,13 @@ export const Main = () => {
     return (
         <>
             <Div>
-                <Button onClick={clickHandler}>joke</Button>
+                <Button onClick={clickHandler}>Get joke</Button>
+            </Div>
+            <Div>
+            {jock && <Button onClick={() => clickHandlerCart(jock)}>To Favorite</Button>}
             </Div>
             <div>
-                {jock && <div key={jock.id} onClick={() => clickHandlerCart(jock)}><JockItem item={jock} /></div>}
+                {jock && <div key={jock.id} ><JockItem item={jock} /></div>}
             </div>
             <hr />
 
