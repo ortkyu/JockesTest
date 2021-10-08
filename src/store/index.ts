@@ -15,6 +15,7 @@ const store = createStore(
 store.subscribe(() => {
     setLS(store.getState().cartJocks.jockes);
   });
+export type AppDispatch = typeof store.dispatch
 
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,

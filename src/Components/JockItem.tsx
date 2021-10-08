@@ -4,12 +4,16 @@ import { JoksTypes } from '../Interfaces';
 const Div = styled.div`
 display: flex;
 justify-content: center;
-padding: 10px;
-background: #dcdae4;
-margin: 20px;
-width: 268px;
+padding: 7px;
+background: #ffffff;
+width: 27vw;
 height: 49px;
+overflow: auto;
+@media (max-width: 500px) {
+    width: 100%;
+  }
 `
+
 interface ItemProps {
     item: JoksTypes
 }

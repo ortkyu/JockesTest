@@ -1,26 +1,29 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from '../store/reducers';
-import { JockItem } from '../Components/JockItem';
 import styled from 'styled-components'
-import { deleteItemAction, clearCart } from '../store/Cart/action'
+import { clearCart } from '../store/Cart/action'
+import { ListItem } from "../Components/ListItem";
 
-const Span = styled.div`
-display: flex;
-justify-content: center;
+const Div = styled.div`
+text-align: center;
+width: 200px;
+height: 25px;
+background: #f35757;
+color: #fff;
+cursor: pointer; 
 `
+
 export const Cart = () => {
     const jockCart = useSelector((state: RootState) => state.cartJocks.jockes);
     const dispatch = useDispatch();
 
+if (!jockCart.length) {
+    return <h1>there is nothing</h1>
+}
     return (
-        <div>
-            <div onClick={() => dispatch(clearCart())}>delete all</div>
-            {jockCart.map(i =>
-                <Span>
-                    <JockItem item={i} />
-                    <span onClick={() => dispatch(deleteItemAction(i.id))}>x</span>
-                </Span>
-            )}
+        <div >
+            <Div onClick={() => dispatch(clearCart())}>delete all</Div>
+            <ListItem jockCart={jockCart} />
         </div>
     );
 }

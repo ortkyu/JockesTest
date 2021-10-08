@@ -1,7 +1,5 @@
+import { AppDispatch, AppThunk } from './../index';
 import { ADD_JOKE } from "./types";
-import { ThunkAction } from 'redux-thunk'
-import { Action } from 'redux'
-import { RootState } from '../reducers'
 import { JoksTypes } from "../../Interfaces";
 
 export const addToState = (jock: JoksTypes) => ({ type: ADD_JOKE, jock })
@@ -20,7 +18,7 @@ const requestJoke = (dispatch: any) => {
       })
 }
 
-export const addJokeInterval = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
+export const addJokeInterval = (): AppThunk => (dispatch) => {
   if (!click ) {
     timerJoke = setInterval(() => requestJoke(dispatch) , 3000)
     click = true
@@ -30,6 +28,6 @@ export const addJokeInterval = (): ThunkAction<void, RootState, unknown, Action<
   }
 }
 
-export const addJoke = (): ThunkAction<void, RootState, unknown, Action<string>> => (dispatch) => {
+export const addJoke = (): AppThunk => (dispatch) => {
   requestJoke(dispatch)
 }
