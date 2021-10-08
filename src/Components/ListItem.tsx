@@ -25,7 +25,6 @@ writing-mode: vertical-rl;
 cursor: pointer; 
 `
 
-
 interface ListItemProps {
     jockCart: JoksTypes[]
 }

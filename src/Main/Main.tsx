@@ -39,7 +39,7 @@ export const Main = () => {
       </Div>
       <div>
         {jock && (
-            <JockItem item={jock} />
+            <JockItem width={'80vw'} item={jock} />
         )}
       </div>
     </DivWrap>
