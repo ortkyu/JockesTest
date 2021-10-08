@@ -1,14 +1,16 @@
-import { AddJoke, ADD_JOKE, JoksTypesState } from "./types";
+import { AddJoke, ADD_JOKE, ADD_LOAD, JoksTypesState, ProductsCardActionTypes } from "./types";
 
 const initialState: JoksTypesState = {
-    jock: undefined
+  loading: true,
+  jock: undefined
 };
 
-const jokeReducer = (state = initialState, action: AddJoke): JoksTypesState  => {
+const jokeReducer = (state = initialState, action: ProductsCardActionTypes): JoksTypesState => {
   switch (action.type) {
-    case ADD_JOKE:     
+    case ADD_JOKE:
       return { ...state, jock: action.jock };
-
+      case ADD_LOAD:
+        return { ...state, loading: action.payload };
     default:
       return state;
   }

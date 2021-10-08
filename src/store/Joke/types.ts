@@ -1,4 +1,5 @@
 export const ADD_JOKE = 'ADD_JOKE';
+export const ADD_LOAD = 'ADD_LOAD';
 
 
 
@@ -14,6 +15,7 @@ export interface JoksTypes {
 
 export interface JoksTypesState {
     jock: JoksTypes | undefined
+    loading: boolean
 }
 
 export interface AddJoke {
@@ -21,5 +23,11 @@ export interface AddJoke {
     jock: JoksTypes 
   }
 
+  export interface AddLoad {
+    type: typeof ADD_LOAD
+    payload: boolean 
+  }
+  
 
-export type ProductsCardActionTypes = AddJoke //| SubQuantity | RemoveProduct | AddToCardStorage | AddToCard
+
+export type ProductsCardActionTypes = AddJoke | AddLoad //| SubQuantity | RemoveProduct | AddToCardStorage | AddToCard

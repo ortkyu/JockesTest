@@ -34,7 +34,6 @@ margin-left: 55px;
 
 export const Header = () => {
   const jockCart = useSelector((state: RootState) => state.cartJocks.jockes);
-  const itemCount = jockCart.length
 
   return (
     <Div>
@@ -47,7 +46,7 @@ export const Header = () => {
         <h1>
           cart
         </h1>
-        {itemCount > 0 && <DivCount>{itemCount}</DivCount>}
+        {!!jockCart.length && <DivCount>{jockCart.length}</DivCount>}
       </NavLink>
     </Div>
   );
