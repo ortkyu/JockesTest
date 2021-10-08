@@ -36,12 +36,11 @@ export const ListItem: React.FC<ListItemProps> = ({ jockCart }) => {
         <>
             <Span>
                 {jockCart.map(i =>
-                    <Div>
+                    <Div key={i.id}>
                         <JockItem item={i} />
                         <SpanDelete onClick={() => dispatch(deleteItemAction(i.id))}>delete</SpanDelete>
                     </Div>
                 )}
-
             </Span>
         </>
     );
