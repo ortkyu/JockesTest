@@ -1,4 +1,4 @@
-import { JoksTypes } from '../store/Joke/types';
+import { JoksTypes } from "../Interfaces";
 
 export const loadLS = (): JoksTypes[] | [] => {
   try {

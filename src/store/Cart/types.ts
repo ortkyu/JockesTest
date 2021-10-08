@@ -1,18 +1,10 @@
+import { JoksTypes } from "../../Interfaces";
 export const ADD_JOKE_TOCART = 'ADD_JOKE_TOCART';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const DELETE_ALL = 'DELETE_ALL';
 
-export interface JoksTypes {
-    categories: []
-    created_at: string
-    icon_url: string
-    id: string
-    updated_at: string
-    url: string
-    value: string
-}
 
-export interface CartJocks {
+export interface CartJocksState {
     jockes: JoksTypes[] 
 }
 export interface DeleteItemActionType {

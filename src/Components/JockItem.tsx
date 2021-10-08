@@ -1,5 +1,5 @@
-import { JoksTypes } from '../store/Joke/types';
 import styled from 'styled-components'
+import { JoksTypes } from '../Interfaces';
 
 const Div = styled.div`
 display: flex;
@@ -7,7 +7,8 @@ justify-content: center;
 padding: 10px;
 background: #dcdae4;
 margin: 20px;
-
+width: 268px;
+height: 49px;
 `
 interface ItemProps {
     item: JoksTypes
