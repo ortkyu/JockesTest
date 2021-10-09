@@ -1,4 +1,4 @@
-import { AppDispatch, AppThunk } from './../index';
+import {  AppThunk } from './../index';
 import { ADD_JOKE } from "./types";
 import { JoksTypes } from "../../Interfaces";
 
@@ -18,7 +18,8 @@ const requestJoke = (dispatch: any) => {
       })
 }
 
-export const addJokeInterval = (): AppThunk => (dispatch) => {
+export const addJokeInterval = (stopInterval?: boolean): AppThunk => (dispatch) => {
+  stopInterval && (click = stopInterval)
   if (!click ) {
     timerJoke = setInterval(() => requestJoke(dispatch) , 3000)
     click = true

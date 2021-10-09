@@ -4,6 +4,7 @@ import { RootState } from "../store/reducers";
 import { cartJock } from "../store/Cart/action";
 import { JockItem } from "../Components/JockItem";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const DivWrap = styled.div`
   display: flex;
@@ -29,6 +30,10 @@ const Button = styled.button`
 export const Main = () => {
   const dispatch = useDispatch();
   const { jock } = useSelector((state: RootState) => state.jock);
+
+useEffect((): any => {
+return () => dispatch(addJokeInterval(true))
+}, [])
 
   return (
     <DivWrap>
