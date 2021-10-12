@@ -2,7 +2,7 @@ import { JoksTypes } from '../Interfaces';
 import { JockItem } from './JockItem';
 import { useDispatch } from "react-redux";
 import styled from 'styled-components'
-import { deleteItemAction } from '../store/Cart/action'
+import { deleteItemAction } from '../store/Favorite/action'
 
 const Div = styled.div`
 display: flex;

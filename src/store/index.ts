@@ -13,7 +13,7 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-    setLS(store.getState().cartJocks.jockes);
+    setLS(store.getState().favoriteJocks.jockes);
   });
 export type AppDispatch = typeof store.dispatch
 

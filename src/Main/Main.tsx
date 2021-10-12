@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addJokeInterval, addJoke } from "../store/Joke/action";
 import { RootState } from "../store/reducers";
-import { cartJock } from "../store/Cart/action";
+import { favoriteJock } from "../store/Favorite/action";
 import { JockItem } from "../Components/JockItem";
 import styled from "styled-components";
 import { useEffect } from "react";
@@ -40,7 +40,7 @@ return () => dispatch(addJokeInterval(true))
       <Div>
         <Button onClick={() => dispatch(addJoke())}>get jock</Button>
         <Button onClick={() => dispatch(addJokeInterval())}>interval jock</Button>
-        <Button onClick={() => {jock && dispatch(cartJock(jock))}}>To Favorite</Button>
+        <Button onClick={() => {jock && dispatch(favoriteJock(jock))}}>To Favorite</Button>
       </Div>
       <div>
         {jock && (

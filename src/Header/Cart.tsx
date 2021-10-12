@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from '../store/reducers';
 import styled from 'styled-components'
-import { clearCart } from '../store/Cart/action'
+import { clearFavorite } from '../store/Favorite/action'
 import { ListItem } from "../Components/ListItem";
 
 const Div = styled.div`
@@ -14,7 +14,7 @@ cursor: pointer;
 `
 
 export const Cart = () => {
-    const jockCart = useSelector((state: RootState) => state.cartJocks.jockes);
+    const jockCart = useSelector((state: RootState) => state.favoriteJocks.jockes);
     const dispatch = useDispatch();
 
 if (!jockCart.length) {
@@ -22,7 +22,7 @@ if (!jockCart.length) {
 }
     return (
         <div >
-            <Div onClick={() => dispatch(clearCart())}>delete all</Div>
+            <Div onClick={() => dispatch(clearFavorite())}>delete all</Div>
             <ListItem jockCart={jockCart} />
         </div>
     );

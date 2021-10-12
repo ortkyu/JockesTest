@@ -14,4 +14,4 @@ export interface AddJoke {
   
 
 
-export type ProductsCardActionTypes = AddJoke
+export type FavoriteActionTypes = AddJoke

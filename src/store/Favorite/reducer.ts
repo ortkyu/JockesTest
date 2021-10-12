@@ -1,13 +1,13 @@
-import { loadLS } from './../../utils/localStorageCart';
-import { ADD_JOKE_TOCART, CartJocksState, DELETE_ITEM, DELETE_ALL, ProductsCardActionTypes } from "./types";
+import { loadLS } from '../../utils/localStorageCart';
+import { ADD_JOKE_TO_FAVORITE, favoriteJocksState, DELETE_ITEM, DELETE_ALL, FavoriteActionTypes } from "./types";
 
-const initialState: CartJocksState = {
+const initialState: favoriteJocksState = {
   jockes: loadLS()
 };
 
-const cartJocksReducer = (state = initialState, action: ProductsCardActionTypes): CartJocksState => {
+const favoriteJocksReducer = (state = initialState, action: FavoriteActionTypes): favoriteJocksState => {
   switch (action.type) {
-    case ADD_JOKE_TOCART: {
+    case ADD_JOKE_TO_FAVORITE: {
       return {
         ...state, jockes: state.jockes.length > 9
           ? [...state.jockes, action.payload].slice(1)
@@ -29,4 +29,4 @@ const cartJocksReducer = (state = initialState, action: ProductsCardActionTypes)
   }
 };
 
-export default cartJocksReducer;
+export default favoriteJocksReducer;

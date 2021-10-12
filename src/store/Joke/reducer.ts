@@ -1,10 +1,10 @@
-import { ADD_JOKE, JoksTypesState, ProductsCardActionTypes } from "./types";
+import { ADD_JOKE, JoksTypesState, FavoriteActionTypes } from "./types";
 
 const initialState: JoksTypesState = {
   jock: null
 };
 
-const jokeReducer = (state = initialState, action: ProductsCardActionTypes): JoksTypesState => {
+const jokeReducer = (state = initialState, action: FavoriteActionTypes): JoksTypesState => {
   switch (action.type) {
     case ADD_JOKE:
       return { ...state, jock: action.jock };
